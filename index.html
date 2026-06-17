@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Interactive comments section</title>
@@ -12,12 +12,13 @@
 </head>
 <body>
   <main id="main-content"></main>
+  <img src="images/icon-reply.svg" alt="">
   <!-- Pull dynamic content from the data.json file -->
-  <form action="#" id="user-comment">
-    <div id="avatar"></div>
+  <form action="#" id="user-comment" class="form-data">
+    <img src="images/avatars/image-juliusomo.png" alt="">
     
-    <textarea name="text" id="text-area">Comment</textarea>
-    <button type="submit">Sumbit</button>
+    <input name="text" id="text-area" class="text-area" placeholder="Add a comment"/>
+    <button type="submit" class="submitBtn">Sumbit</button>
   </form>
   <script src="script.js"></script>
 </body>

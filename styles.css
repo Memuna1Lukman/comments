@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Rubik',sans-serif;
+    
+}
+
+#main-content{
+    padding: 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.comment-card{
+    background:white;
+    border-radius:12px;
+    padding:1.5rem;
+    margin-bottom:1rem;
+
+    display:grid;
+    grid-template-columns:60px 1fr auto;
+    gap:1rem;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Score Section */
+.comment-card > div:first-of-type,.reply-card .score-badge{
+    background:hsl(228, 33%, 97%);
+    border-radius:10px;
+    width:40px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:0.5rem;
+    padding:0.5rem;
+}
+
+.reply-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.signs{
+    border: 0;
+}
+.comment-header{
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+}
+.reply-card{
+    margin-top:1rem;
+    margin-left:3rem;
+    border-left:2px solid hsl(223, 19%, 93%);
+    padding-left:1.5rem;
+    box-shadow:none;
+    background:white;
+    border-radius:12px;
+    padding:1.5rem;
+    margin-bottom:1rem;
+    display:grid;
+    grid-template-columns:60px 1fr auto;
+
+    align-items: center;
+    gap:1rem;
+    
+}
+
+.form-data{
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 60px auto 80px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    
+    width: 80%;
+    margin: 20px auto;
+    
+}
+.text-area{
+    width: 100%;
+    max-width: 800px;
+    padding-left: 0.5rem;
+    
+    border-radius: 5px;
+}
+.submitBtn{
+    padding: 0.47rem;
+    text-align: center;
+    width: 60px;
+    height: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    font-weight: 700;
+}

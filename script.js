@@ -35,59 +35,130 @@ function displayComments(comments){
         // Loop through replies
         comment.replies.forEach(reply =>{
            allReplies += `
-           <div>
-              <p>${reply.content}</p>
-              <p>${reply.createdAt}</p>
-              <div>
-                <button onclick="voteUp(${reply.id})">plus</button>
-                <p>${reply.score}</p>
-                <button onclick="voteDown(${reply.id})">minus</button>
-              </div> 
-              <img src="${reply.user.image.webp}">
-              <p>${reply.user.username}</p>
-              
-              <!-- Condition check for reply deletion -->
-              ${reply.user.username === currentUser.username 
-                ? `<button onclick="deleteBtn(${reply.id})">Delete</button>` 
-                : ""
-              }
-              ${reply.user.username === currentUser.username 
-                ? `<button onclick="editBtn(${reply.id})">Edit</button>` 
-                : ""
-              }
-              
-           </div> 
-        `;
+<div class="reply-card">
+
+    <div class="score-badge">
+        <button onclick="voteUp(${reply.id})" class="signs">
+            <img src="images/icon-plus.svg">
+        </button>
+
+        <span>${reply.score}</span>
+
+        <button onclick="voteDown(${reply.id})" class="signs">
+            <img src="images/icon-minus.svg">
+        </button>
+    </div>
+
+    <div class="comment-content">
+
+        <div class="comment-header">
+            <img src="${reply.user.image.webp}">
+            <span class="username">${reply.user.username}</span>
+            <span class="timestamp">${reply.createdAt}</span>
+        </div>
+
+        <p class="comment-text">
+            ${reply.content}
+        </p>
+
+    </div>
+
+    <div class="actions">
+
+        ${
+            reply.user.username === currentUser.username
+            ? `
+            <button onclick="deleteBtn(${reply.id})" class="delete-btn">
+                <img src="images/icon-delete.svg" alt="">
+            </button>
+
+            <button onclick="editBtn(${reply.id})" class="edit-btn">
+                <img src="images/icon-edit.svg" alt="">
+            </button>
+            `
+            : `
+            <button class="reply-btn">
+                <img src="images/icon-reply.svg" alt=""><p>Reply</p>
+            </button>
+            `
+        }
+
+    </div>
+
+</div>
+`;
         });
 
         // Main parent comment layout
-        const cardLayout = `
-           <div>
-              <p>${comment.content}</p>
-              <p>${comment.createdAt}</p>
-              <div>
-                <button onclick="voteUp(${comment.id})">plus</button>
-                <p>${comment.score}</p>
-                <button onclick="voteDown(${comment.id})">minus</button>
-              </div>  
-              <img src="${comment.user.image.webp}">
-              <p>${comment.user.username}</p>
-              <p>${comment.replies.length}</p>
-              <div>
-                <div>${allReplies}</div> <!-- Injects clean replies here -->
-              </div>
-              
-              <!-- Condition check for comment deletion -->
-              ${comment.user.username === currentUser.username 
-                ? `<button onclick="deleteBtn(${comment.id})">Delete</button>` 
-                : ""
-              }
-              ${comment.user.username === currentUser.username 
-                ? `<button onclick="editBtn(${comment.id})">Edit</button>` 
-                : ""
-              }
-           </div> 
-        `;
+     const cardLayout = `
+<div class="comment-card">
+
+    <div class="score-badge">
+        <button onclick="voteUp(${comment.id})" class="signs">
+            <img src="images/icon-plus.svg" alt="">
+        </button>
+
+        <span>${comment.score}</span>
+
+        <button onclick="voteDown(${comment.id})" class="signs">
+            <img src="images/icon-minus.svg" alt="">
+        </button>
+    </div>
+
+    <div class="comment-content">
+
+        <div class="comment-header">
+            <img src="${comment.user.image.webp}" alt="${comment.user.username}">
+
+            <span class="username">
+                ${comment.user.username}
+            </span>
+
+            <span class="timestamp">
+                ${comment.createdAt}
+            </span>
+        </div>
+
+        <p class="comment-text">
+            ${comment.content}
+        </p>
+
+    </div>
+
+    <div class="actions">
+
+        ${
+            comment.user.username === currentUser.username
+            ? `
+            <button onclick="deleteBtn(${comment.id})" class="delete-btn">
+                <img src="images/icon-delete.svg" alt="">
+            </button>
+
+            <button onclick="editBtn(${comment.id})" class="edit-btn">
+                <img src="images/icon-edit.svg" alt="">
+            </button>
+            `
+            : `
+            <button class="reply-btn">
+                <img src="images/icon-reply.svg" alt=""><p>Reply</p>
+            </button>
+            `
+        }
+
+    </div>
+</div>
+    ${
+        allReplies
+        ? `
+        <div class="replies">
+            ${allReplies}
+        </div>
+        `
+        : ""
+    }
+
+
+`;
         
         mainContent.innerHTML += cardLayout;
         console.log(cardLayout);
