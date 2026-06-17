@@ -43,7 +43,9 @@ body{
     padding:0.5rem;
 }
 
-.reply-btn{
+.reply-btn,
+.delete-btn,
+.edit-btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,6 +57,7 @@ body{
 
 .signs{
     border: 0;
+    color: hsl(239, 57%, 85%);
 }
 .comment-header{
     display: flex;
@@ -93,7 +96,7 @@ body{
 }
 .text-area{
     width: 100%;
-    max-width: 800px;
+    max-width: 745px;
     padding-left: 0.5rem;
     
     border-radius: 5px;
@@ -105,8 +108,40 @@ body{
     height: 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: none;
-    background-color: blue;
+    background-color: hsl(238, 40%, 52%);
     color: white;
     border-radius: 5px;
     font-weight: 700;
+}
+.username{
+    font-weight: 700;
+}
+.comment-text{
+    margin-top: 1rem;
+}
+
+button p{
+    font-weight: 700;
+    color: hsl(238, 40%, 52%);
+}
+
+.span{
+    color: hsl(238, 40%, 52%);
+}
+
+
+.img{
+    width: 40px;
+}
+
+.timestamp{
+    color: hsl(211, 10%, 45%);
+}
+.comment-text{
+    color: hsl(212, 24%, 26%);
+}
+.replies {
+    margin-left: 2.5rem; 
+    border-left: 2px solid hsl(223, 19%, 93%); 
+    padding-left: 1.5rem;
 }

@@ -42,7 +42,7 @@ function displayComments(comments){
             <img src="images/icon-plus.svg">
         </button>
 
-        <span>${reply.score}</span>
+        <span class="span">${reply.score}</span>
 
         <button onclick="voteDown(${reply.id})" class="signs">
             <img src="images/icon-minus.svg">
@@ -52,7 +52,7 @@ function displayComments(comments){
     <div class="comment-content">
 
         <div class="comment-header">
-            <img src="${reply.user.image.webp}">
+            <img src="${reply.user.image.webp}" class="img">
             <span class="username">${reply.user.username}</span>
             <span class="timestamp">${reply.createdAt}</span>
         </div>
@@ -68,17 +68,17 @@ function displayComments(comments){
         ${
             reply.user.username === currentUser.username
             ? `
-            <button onclick="deleteBtn(${reply.id})" class="delete-btn">
-                <img src="images/icon-delete.svg" alt="">
+            <button onclick="deleteBtn(${reply.id})" class="delete-btn btn">
+                <img src="images/icon-delete.svg" alt=""><p class="para">Delete</p>
             </button>
 
-            <button onclick="editBtn(${reply.id})" class="edit-btn">
-                <img src="images/icon-edit.svg" alt="">
+            <button onclick="editBtn(${reply.id})" class="edit-btn btn">
+                <img src="images/icon-edit.svg" alt=""><p class="para">Edit</p>
             </button>
             `
             : `
             <button class="reply-btn">
-                <img src="images/icon-reply.svg" alt=""><p>Reply</p>
+                <img src="images/icon-reply.svg" alt=""><p class="para">Reply</p>
             </button>
             `
         }
@@ -98,7 +98,7 @@ function displayComments(comments){
             <img src="images/icon-plus.svg" alt="">
         </button>
 
-        <span>${comment.score}</span>
+        <span class="span">${comment.score}</span>
 
         <button onclick="voteDown(${comment.id})" class="signs">
             <img src="images/icon-minus.svg" alt="">
@@ -108,7 +108,7 @@ function displayComments(comments){
     <div class="comment-content">
 
         <div class="comment-header">
-            <img src="${comment.user.image.webp}" alt="${comment.user.username}">
+            <img src="${comment.user.image.webp}" alt="${comment.user.username}" class="img">
 
             <span class="username">
                 ${comment.user.username}
@@ -131,11 +131,11 @@ function displayComments(comments){
             comment.user.username === currentUser.username
             ? `
             <button onclick="deleteBtn(${comment.id})" class="delete-btn">
-                <img src="images/icon-delete.svg" alt="">
+                <img src="images/icon-delete.svg" alt=""><p class="para">Delete</p>
             </button>
 
             <button onclick="editBtn(${comment.id})" class="edit-btn">
-                <img src="images/icon-edit.svg" alt="">
+                <img src="images/icon-edit.svg" alt=""><p class="para">Edit</p>
             </button>
             `
             : `
